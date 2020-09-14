@@ -92,6 +92,7 @@ namespace DFP_PoastSuite
             Console.WriteLine();
 
             // DECLARATION OF VARIABLES AND ARRAYS USED for DPF PROJECT
+            // I need to restructure my variables so they come from a global class
             double[] Coef = new double[] { };
 
             double a;
