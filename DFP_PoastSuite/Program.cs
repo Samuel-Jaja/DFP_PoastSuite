@@ -7,24 +7,30 @@ namespace DFP_PoastSuite
     class Program
     {
         
-        
-        //public class RandomGenerator
-        //{
-
-        //    // Instantiate random number generator.  
-        //    // It is better to keep a single Random instance 
-        //    // and keep using Next on the same instance.  
-        //    private readonly Random _random = new Random();
-
-        //    // Generates a random number within a range.      
-        //    public int RandomNumber(int min, int max)
-        //    {
-        //        return _random.Next(min, max);
-        //    }
-        //}
-
         static void Main(string[] args)
         {
+
+            /*
+            // Calling the TempRecord Class to test Array indexing get set accessors 
+            
+                var tempRecord = new TempRecord();
+                // Use the indexer's set accessor
+                tempRecord[3] = 58.3F;
+                tempRecord[5] = 6200.1F;
+                float @new = (tempRecord[5] + tempRecord[5])*2;
+
+            // Use the indexer's get accessor
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine($"Element #{i} = {tempRecord[i]}");
+                }
+
+                // Keep the console window open in debug mode.
+                Console.WriteLine("Press any key to exit.");
+                Console.WriteLine(" New Number = {0}",@new);
+                Console.ReadKey();
+            */
+
             // Calling the Singleton Class to test
 
             /*
@@ -32,67 +38,11 @@ namespace DFP_PoastSuite
              singleton.DoSomething();
             */
 
-
-            /*
-            var generator = new RandomGenerator();
-            var randomNumber = generator.RandomNumber(1, 10);
-            Console.WriteLine($"Random number between 1 and 10 is {randomNumber}");
-            if (randomNumber == 1)
-            {
-                Console.WriteLine($"QUESTION 1");
-            }
-            else if (randomNumber == 2)
-            {
-                Console.WriteLine($"QUESTION 2");
-            }
-            else if (randomNumber == 3)
-            {
-                Console.WriteLine($"QUESTION 3");
-            }
-            else if (randomNumber == 4)
-            {
-                Console.WriteLine($"QUESTION 4");
-            }
-            else if (randomNumber == 5)
-            {
-                Console.WriteLine($"QUESTION 5");
-            }
-            else if (randomNumber == 6)
-            {
-                Console.WriteLine($"QUESTION 6");
-            }
-            else if (randomNumber == 7)
-            {
-                Console.WriteLine($"QUESTION 7");
-            }
-            else if (randomNumber == 8)
-            {
-                Console.WriteLine($"QUESTION 8");
-            }
-            else if (randomNumber == 9)
-            {
-                Console.WriteLine($"QUESTION 9");
-            }
-            else
-            {
-                Console.WriteLine($"QUESTION 10");
-                Console.WriteLine("I AM A PROCESS ENGINEER & A DEVELOPER");
-            }
-            Console.WriteLine();
-            */
-
-
-            Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
-            Console.WriteLine();
-            Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
-            Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
-            Console.WriteLine();
-            Console.WriteLine("QUESTION: Minimize f(x) = 1.5*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
-            Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
-            Console.WriteLine();
+            // Calling the RandomGenerator Class to test Random numbers generation which will be used later in POAST Suite
 
             // DECLARATION OF VARIABLES AND ARRAYS USED for DPF PROJECT
             // I need to restructure my variables so they come from a global class
+
             double[] Coef = new double[] { };
 
             double a;
@@ -101,6 +51,7 @@ namespace DFP_PoastSuite
             double d;
             double e;
             double f;
+
             double fx;
 
             double[,] X1 = new double[,] { };
@@ -145,6 +96,249 @@ namespace DFP_PoastSuite
             double[,] B1 = new double[,] { };
             double tolerance = 0.0001;                            //                    <<<<Tolerance
 
+            //Test Problems for POAST Suite according to Prof Kuye
+            var generator = new RandomGenerator();
+            var randomNumber = generator.RandomNumber(1, 11);
+            Console.WriteLine($"Random number between 1 and 10 is {randomNumber}");
+            if (randomNumber == 1)
+            {
+                Console.WriteLine($"QUESTION 1");
+
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.5*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.5, 0.5, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 2)
+            {
+                Console.WriteLine($"QUESTION 2");
+                
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.6*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                Coef = new double[] { 1.6, 0.5, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+
+                // DECLARATION OF VARIABLES AND ARRAYS USED for DPF PROJECT
+                // I need to restructure my variables so they come from a global class
+                
+            }
+            else if (randomNumber == 3)
+            {
+                Console.WriteLine($"QUESTION 3");
+
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.5*x1^2 + 0.4*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.5, 0.4, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 4)
+            {
+                Console.WriteLine($"QUESTION 4");
+
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.7*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.7, 0.5, -1, -2, 0, 0 };
+
+
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 5)
+            {
+                Console.WriteLine($"QUESTION 5");
+
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.8*x1^2 + 0.3*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.8, 0.45, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 6)
+            {
+                Console.WriteLine($"QUESTION 6");
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.9*x1^2 + 0.6*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.9, 0.6, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+
+
+            }
+            else if (randomNumber == 7)
+            {
+                Console.WriteLine($"QUESTION 7");
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.0*x1^2 + 0.2*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 2.0, 0.4, -1, -2, 0, 0 };
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 8)
+            {
+                Console.WriteLine($"QUESTION 8");
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.8*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.8, 0.5, -1, -2, 0, 0 };   
+                
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+            }
+            else if (randomNumber == 9)
+            {
+                Console.WriteLine($"QUESTION 9");
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.6*x1^2 + 0.5*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.6, 0.55, -1, -2, 0, 0 };
+
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+
+
+            }
+            else
+            {
+                Console.WriteLine($"QUESTION 10");
+                Console.WriteLine("==========OPTIMIZATION || MINIMIZATION PROBLEM || GRADIENT METHOD============");
+                Console.WriteLine();
+                Console.WriteLine("===============DAVIDON FLECTHER POWELL [DFP] OPTIMIZATION TECHNIQUE================");
+                Console.WriteLine("Using DPF Approach, minimize the function of Model : Ax1^2 + Bx1 + Cx1x2 + Dx2 + Ex2^2 + F");
+                Console.WriteLine();
+                Console.WriteLine("QUESTION: Minimize f(x) = 1.4*x1^2 + 0.7*x2^2 - x1*x2 - 2*x1 ");
+                Console.WriteLine("Staring at Point X1 = [x1,x2] = [-2,4]");
+                Console.WriteLine();
+
+                // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
+
+                Coef = new double[] { 1.4, 0.7, -1, -2, 0, 0 };
+
+                a = Coef[0];
+                b = Coef[1];
+                c = Coef[2];
+                d = Coef[3];
+                e = Coef[4];
+                f = Coef[5];
+
+            }
+            
+
             //NOTE: gi (Gradient Vector), Xi (Starting Point) and Si (Search Direction) are all column vectors 
 
             //Step a : Select Initial point [X1] and n x n positive definite symmetric Hi. Usually Hi = I (Unit Matrix)
@@ -161,9 +355,7 @@ namespace DFP_PoastSuite
                         {0,1}
             };
 
-            // COEFFICIENTS OF f(x) in Array(Coef) but passed to variables a, b, c, d e, f
-            Coef = new double[] { 1.5, 0.5, -1, -2, 0, 0 };
-
+          
             a = Coef[0];
             b = Coef[1];
             c = Coef[2];
@@ -195,12 +387,9 @@ namespace DFP_PoastSuite
             S1 = MatrixMultiplication(H1, g1);
             S1 = ScalarMatrixMultiplication(S1, -1);
 
-            //Step c: 
-            L1 = -((-48 * a) + (-48 * b) + (48 * c) + (12 * c) + (12 * d)) / ((288 * a) + (72 * b) - (144 * c));
-            // L2 = -((-0.9490 * a) + (-3.237 * b) + (1.1074 * c) + (0.6935 * c) + (0.7241 * d)) / ((0.1925 * a) + (1.0486 * b) - (0.4492 * c));
+            //Step c:  MODEL DEVELOPED TO GENERATE LAMBDA, THE MODEL TAKES Xi and Si for the number of iteration.
+            L1 = -(2 * (a * X1[0, 0] * S1[0, 0]) + 2 * (b * X1[1, 0] * S1[1, 0]) + c * X1[0, 0] * S1[1, 0] + c * X1[1, 0] * S1[0, 0] + d * S1[0, 0]) / ((2 * (a * S1[0, 0] * S1[0, 0]) + (2 * (b * S1[1, 0] * S1[1, 0]) + (2 * (c * S1[0, 0] * S1[1, 0])))));
 
-
-            // Also solve for L2 in this nature
 
             for (int i = 1; Math.Abs(g1x1) >= tolerance && Math.Abs(g1x2) >= tolerance; i++)
             {
@@ -245,7 +434,6 @@ namespace DFP_PoastSuite
                 else if (i == 2)
                 {
                     //Algorithm e : Update H matrix as follows: Hi+1 = Hi + Ai + Bi
-                    L2 = 1.7058;
 
                     q = new double[,]
                     {
@@ -290,6 +478,9 @@ namespace DFP_PoastSuite
                     S2 = MatrixMultiplication(H2, g2);
                     S2 = ScalarMatrixMultiplication(S2, -1);
 
+                    L2 = -(2 * (a * X2[0, 0] * S2[0, 0]) + 2 * (b * X2[1, 0] * S2[1, 0]) + c * X2[0, 0] * S2[1, 0] + c * X2[1, 0] * S2[0, 0] + d * S2[0, 0]) / ((2 * (a * S2[0, 0] * S2[0, 0]) + (2 * (b * S2[1, 0] * S2[1, 0]) + (2 * (c * S2[0, 0] * S2[1, 0])))));
+
+
                     L2S2 = ScalarMatrixMultiplication(S2, L2);
 
                     //Initialization of X3
@@ -323,8 +514,13 @@ namespace DFP_PoastSuite
                     Console.WriteLine("The gradient vector g3 are  df(x)/dx1 = {0}, where as df(x)/dx2 = {1},", Math.Round(Convert.ToDecimal(g3x1), 3), Math.Round(Convert.ToDecimal(g3x2), 3));
                     Console.WriteLine();
                     Console.WriteLine("Hence X3 =[{0},{1}] is the required minimum point and X3 is Optimal", Math.Round(Convert.ToDecimal(X3[0, 0]), 0), Math.Round(Convert.ToDecimal(X3[1, 0]), 0));
+
                     Console.WriteLine();
+                    Console.WriteLine("Output of LAMBDA Values");
+                    Console.WriteLine("Lambda 1 is {0}", L1);
+                    Console.WriteLine("Lambda 2 is {0}", L2);
                     //Console.WriteLine("=============================GRADE THE USER=================================");
+                    //Go to the Xamarin file to see grading codes 
 
                     g1x1 = g3x1;
                     g1x2 = g3x2;
@@ -333,39 +529,39 @@ namespace DFP_PoastSuite
                 else
                 { }
             }
-        // Algorithm f : Set i = i+1 and return to [Algorithm b]
-
-
-        // DO WHILE LOOP STRUCTURE FOR THE FOR LOOP ABOVE.
-        /*
-        int count = 1;
-        double dd = 0;
-        do
-        {
-            X1[0, 0] = X1[0, 0] + L1S1[0, 0];
-            X1[1, 0] = X1[1, 0] + L1S1[1, 0];
-
-            count++;
-            Console.WriteLine("Iteration [{0}]", count);
-            Console.WriteLine("X2 (Search Point 2):");
-            PrintMatrix1(X1);
-            Console.WriteLine();
-            Console.WriteLine("The Values of X2 are x1 = {0} and x2 = {1}", Math.Round(Convert.ToDecimal(X1[0, 0]), 4), Math.Round(Convert.ToDecimal(X1[1, 0]), 4));
-
-        } while (Math.Abs(g1x1) > dd && Math.Abs(g1x2) > dd);
-        */
-
-
-
-        /*
-        // Criteria  |(xi+1) - (xi)| <= epsolum e AND |(fi+1) - (fi)| <= delta d......e=0.00001 , d=0.0001
-        // If Partial derivatives are available use: gi <= d (g= partial diff of f / partial diff of x)
-        for (int i = 0; i < 1; i++)   //Verify this your for loop i < 1
-        */
 
 
 
 
+            // Algorithm f : Set i = i+1 and return to [Algorithm b]
+
+
+            // DO WHILE LOOP STRUCTURE FOR THE FOR LOOP ABOVE.
+            /*
+            int count = 1;
+            double dd = 0;
+            do
+            {
+                X1[0, 0] = X1[0, 0] + L1S1[0, 0];
+                X1[1, 0] = X1[1, 0] + L1S1[1, 0];
+
+                count++;
+                Console.WriteLine("Iteration [{0}]", count);
+                Console.WriteLine("X2 (Search Point 2):");
+                PrintMatrix1(X1);
+                Console.WriteLine();
+                Console.WriteLine("The Values of X2 are x1 = {0} and x2 = {1}", Math.Round(Convert.ToDecimal(X1[0, 0]), 4), Math.Round(Convert.ToDecimal(X1[1, 0]), 4));
+
+            } while (Math.Abs(g1x1) > dd && Math.Abs(g1x2) > dd);
+            */
+
+
+
+            /*
+            // Criteria  |(xi+1) - (xi)| <= epsolum e AND |(fi+1) - (fi)| <= delta d......e=0.00001 , d=0.0001
+            // If Partial derivatives are available use: gi <= d (g= partial diff of f / partial diff of x)
+            for (int i = 0; i < 1; i++)   //Verify this your for loop i < 1
+            */
 
 
 
@@ -373,17 +569,21 @@ namespace DFP_PoastSuite
 
 
 
-        //IGNORE FOR NOW
-        /*
-        for (int i = 1; i < 13; i++)
-        {
-            for (int j = 1; j < 13; j++)
-            Console.WriteLine("{0} times {1} is {2}", j, i, j * i);
-            Console.WriteLine("========================");
+
+
+
+
+            //IGNORE FOR NOW
+            /*
+            for (int i = 1; i < 13; i++)
+            {
+                for (int j = 1; j < 13; j++)
+                Console.WriteLine("{0} times {1} is {2}", j, i, j * i);
+                Console.WriteLine("========================");
+            }
+            */
+
         }
-        */
-
-    }
         
             
     
